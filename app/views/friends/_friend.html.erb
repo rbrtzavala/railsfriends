@@ -1,40 +1,27 @@
-<div id="<%= dom_id friend %>">
+<table class="table">
+  <thread class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Socials</th>
+    </tr>
+  </thread>
 
-  <table class="table">
-    <thread class="thead-dark">
-      <tr>
-        <th scope="col">First Name</th>
-        <th scope="col">Last Name</th>
-        <th scope="col">Email</th>
-        <th scope="col">Phone</th>
-        <th scope="col">Socials</th>
-        <th>User Id</th>
-        <th colspan="3"></th>
-      </tr>
-    </thread>
-
-    <tbody>
-      <tr>
-        <td>
-          <%= friend.first_name %>
+  <tbody>
+    <tr id="<%= dom_id friend %>">
+      <td>
+        <%= link_to friend.first_name + ' ' + friend.last_name, friend %>
+      </td>
+      <td>
+        <%= friend.email %>
+      </td>
+      <td>
+          <%= friend.phone %>
         </td>
-        <td>
-          <%= friend.last_name %>
-        </td>
-        <td>
-          <%= friend.email %>
-          </td>
-          <td>
-            <%= friend.phone %>
-          </td>
-        <td>
-          <%= friend.social %>
-        </td>
-        <td>
-          <%= friend.user_id%>
-        </td>
-      </tr>
-    </tbody>
+      <td>
+        <%= friend.social %>
+      </td>
+    </tr>
+   </tbody>
   </table>
-
-</div>

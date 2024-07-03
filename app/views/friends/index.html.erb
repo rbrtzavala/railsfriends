@@ -1,14 +1,18 @@
-<h1>Friend List</h1>
+<% if user_signed_in? %>
+  <h1>Friend List</h1>
 
-<div id="friends">
-  <% @friends.each do |friend| %>
-      <% if friend.user == current_user %>
-        <%= render friend %>
-        <p>
-          <%= link_to "Show this friend", friend %>
-        </p>
-      <% end %>
-  <% end %>
-</div>
+  <div id="friends">
+    <% @friends.each do |friend| %>
+        <% if friend.user == current_user %>
+          <%= render friend %>
+        <% end %>
+    <% end %>
+  </div>
 
-<%= link_to "New friend", new_friend_path, class:"btn btn-secondary" %>
+  <%= link_to "New friend", new_friend_path, class:"btn btn-secondary" %>
+
+  <% else %>
+
+  <h1>Welcome to Friend App</h1>
+  <p>Create a friend contact list.</p>
+<% end %>
